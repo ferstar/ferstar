@@ -52,11 +52,11 @@ Found that an AI coding tool with 1M+ users was packing workspaces — including
 ## Latest from the blog
 
 <!-- BLOG-POST-LIST:START -->
+- [两台 DGX Spark 跑 Agent：跑分一时爽，干活卡成狗](https://blog.ferstar.org/posts/dgx-spark-agent-inference/)
 - [做 RunSeal 的初衷：别再让本地 Agent 裸奔跑命令了](https://blog.ferstar.org/posts/local-first-agent-execution-boundary-runseal/)
 - [扒一扒 ZCode 静默上传全量 Git 历史的骚操作](https://blog.ferstar.org/posts/zcode-silent-workspace-snapshot-upload/)
 - [从一堆 Agent 演示日志说起：为什么说‘套壳 Agent 就能做 SaaS’是个荒谬的幻想](https://blog.ferstar.org/posts/the-illusion-of-agent-saas/)
 - [可选插件不能拖死核心会话：MCP 服务的启动隔离与平滑降级](https://blog.ferstar.org/posts/mcp-server-startup-isolation-and-graceful-degradation/)
-- [解耦重型 IO 与 UI 终态：消除桌面 Agent 输入框假死与流式卡顿](https://blog.ferstar.org/posts/desktop-agent-streaming-lifecycle-reconciliation/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Linux & systems
