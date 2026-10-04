@@ -52,11 +52,11 @@ Found that an AI coding tool with 1M+ users was packing workspaces — including
 ## Latest from the blog
 
 <!-- BLOG-POST-LIST:START -->
+- [4090 24G 本地部署 Qwen3.8-Flash-Next：从 Ollama 换到 Strata](https://blog.ferstar.org/posts/qwen38-flash-next-strata-4090/)
 - [给女儿做了个作业打印助手，顺便榨了榨小鸡](https://blog.ferstar.org/posts/homework-print-prep/)
-- [祖传系统无损迁机:btrfs send/receive 实操记录](https://blog.ferstar.org/posts/btrfs-send-receive-system-migration/)
+- [祖传系统无损迁机：btrfs send/receive 实操记录](https://blog.ferstar.org/posts/btrfs-send-receive-system-migration/)
 - [两台 DGX Spark 跑 Agent：跑分一时爽，干活卡成狗](https://blog.ferstar.org/posts/dgx-spark-agent-inference/)
-- [做 RunSeal 的初衷：别再让本地 Agent 裸奔跑命令了](https://blog.ferstar.org/posts/local-first-agent-execution-boundary-runseal/)
-- [扒一扒 ZCode 静默上传全量 Git 历史的骚操作](https://blog.ferstar.org/posts/zcode-silent-workspace-snapshot-upload/)
+- [做 RunSeal 的初衷：给本地 Agent 设一道命令执行边界](https://blog.ferstar.org/posts/local-first-agent-execution-boundary-runseal/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Linux & systems
