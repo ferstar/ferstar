@@ -52,11 +52,11 @@ Found that an AI coding tool with 1M+ users was packing workspaces — including
 ## Latest from the blog
 
 <!-- BLOG-POST-LIST:START -->
+- [让 AI 通过 UIA 操作 Electron 桌面应用：Windows-MCP 实测](https://blog.ferstar.org/posts/ai-agent-drives-electron-app-windows-mcp-uia/)
 - [我用 tailcat 改造了 RustDesk，扫码就能直连](https://blog.ferstar.org/posts/yet-another-remote-desktop-application-sealdesk/)
 - [它不走 VPN，也不许你开：雅迪的 VPN 检测是怎么治住的](https://blog.ferstar.org/posts/how-to-avoid-yadea-vpn-detection/)
 - [你关的是开关，它开的是名单：WPS 是怎么查到我 Root 的](https://blog.ferstar.org/posts/how-to-avoid-wps-root-detection/)
 - [4090 24G 本地部署 Qwen3.8-Flash-Next：从 Ollama 换到 Strata](https://blog.ferstar.org/posts/qwen38-flash-next-strata-4090/)
-- [给女儿做了个作业打印助手，顺便榨了榨小鸡](https://blog.ferstar.org/posts/homework-print-prep/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Linux & systems
