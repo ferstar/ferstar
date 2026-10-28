@@ -52,11 +52,11 @@ Found that an AI coding tool with 1M+ users was packing workspaces — including
 ## Latest from the blog
 
 <!-- BLOG-POST-LIST:START -->
+- [Strata 0.2.7.1 在 GB10 上的性能变化与 SPEC_COST 实测](https://blog.ferstar.org/posts/strata-gb10-sm121-benchmark-optimization/)
 - [RTX 4090 D Tensor 解锁之后，量化 MoE 能快多少](https://blog.ferstar.org/posts/tensor-unlock-quantized-moe/)
 - [RTX 4090 D 解锁实测：Tensor 吞吐翻倍，Strata 推理重测](https://blog.ferstar.org/posts/rtx4090d-gpu-unlock-strata-benchmark/)
 - [让 AI 通过 UIA 操作 Electron 桌面应用：Windows-MCP 实测](https://blog.ferstar.org/posts/ai-agent-drives-electron-app-windows-mcp-uia/)
 - [我用 tailcat 改造了 RustDesk，扫码就能直连](https://blog.ferstar.org/posts/yet-another-remote-desktop-application-sealdesk/)
-- [它不走 VPN，也不许你开：雅迪的 VPN 检测是怎么治住的](https://blog.ferstar.org/posts/how-to-avoid-yadea-vpn-detection/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Linux & systems
