@@ -5,13 +5,13 @@
   <br>
   I take things apart until they tell me how they work — laptops, phone kernels, AI agents.
   <br>
-  Lately: teaching software that already knows its craft to talk to AI, in ways people can trust.
+  Lately: turning proven software into trusted tools for AI agents — keeping the craft in the product and permissions on a leash.
   <br><br>
   极客，爱搞机，家有可爱小女一枚
   <br>
   喜欢把东西拆开，直到它说出自己是怎么运转的：笔记本、手机内核、AI Agent。
   <br>
-  最近在做的事：让懂行的老软件学会和 AI 对话，并且让人放心。
+  最近在做的事：让懂行的专业软件成为 AI Agent 手里受控的工具——真本事留在产品里，身份和权限一路带到底。
 </p>
 
 <p align="center">
@@ -22,23 +22,27 @@
 
 ## What I work on
 
-- **Making existing software agent-ready** — exposing what a product already does well as task-level MCP tools that any agent can call, rather than building yet another agent. The domain assets stay the moat; the agent is interchangeable.
-- **The trust layer** — identity carried through to the person behind the agent, permissions that never exceed theirs, audit trails, answers traceable to the source page, and human sign-off where it matters.
-- **Agent execution security** — what an agent can read, run and send out, and how to enforce that at the OS boundary instead of trusting the vendor's promise.
-- **Agent runtimes** — streaming lifecycles, tool-call recovery, loop guards, context compaction and MCP isolation, mostly in Rust.
-- **Financial document systems** — a production platform for regulatory filings and annual reports that I owned for a long stretch: parsing, rule checks, and a Python stack modernized end to end. On top of it, I led the build of the AI-powered annual report platform an exchange launched for its listed issuers.
-- **Linux & low-level fixes** — touchpad gestures, laptop ACPI quirks, phone kernels: when the hardware misbehaves, I go down to the driver.
-- **Pragmatic Python tooling** — small tools that remove a daily annoyance and then get out of the way.
+- **Making existing software agent-ready** — exposing what a product already does well as task-level MCP tools any agent can call, rather than building yet another wrapper. The domain expertise stays the moat; the agent layer is swappable.
+- **Making agent actions attributable** — end-to-end identity carried through to the human behind the agent, permissions capped at theirs, verifiable source citations, audit trails, and human sign-off where it matters.
+- **Agent execution security** — controlling what an agent can read, run, and send out at the OS boundary instead of trusting a vendor's prompt or promise.
+- **Agent runtimes** — streaming lifecycles, tool-call recovery, graded loop guards, context compaction, and MCP fault isolation, mostly in Rust.
+- **Financial document systems** — production infrastructure for regulatory filings and listed-company annual reports: deep document parsing, rule checks, and exchange-scale AI authoring workflows.
+- **Linux graphics, input & kernels** — zero-copy GPU encoding pipelines (NVENC / VAAPI DMA-BUF), Wayland/X11 capture, touchpad gestures, laptop ACPI quirks, and phone kernels: when hardware or the stack misbehaves, I go down to the driver.
+- **Pragmatic Python tooling** — small, sharp tools that remove a daily annoyance and get out of the way.
 
 ## Featured
 
 **[RunSeal](https://github.com/runseal-labs/runseal)** · Rust  
-An OS-native sandbox layer and stable execution protocol for AI agents. Policy-governed filesystem and network boundaries, structured audit events, and fail-closed behavior whenever a request can't be fully enforced. Windows is the reference backend; macOS and Linux are experimental.
+An OS-native sandbox layer and stable execution protocol for AI agents: policy-governed filesystem and network boundaries, structured audit events, and fail-closed behavior whenever a request can't be fully enforced. Windows is the reference backend; macOS and Linux are experimental.  
 → [Why I built it · 做 RunSeal 的初衷](https://blog.ferstar.org/posts/local-first-agent-execution-boundary-runseal/)
 
 **ZCode silent upload disclosure** · Sep 2026  
-Found that an AI coding tool with 1M+ users was packing workspaces — including full `.git` history — encrypting them and uploading them to cloud storage, on by default with no way to turn it off. The disclosure led to the feature being removed, the client being open-sourced, and third-party security audits.
+Found that an AI coding tool was silently packing users' open workspaces — including full `.git` history — encrypting and uploading them to cloud storage by default with no kill switch. The write-up drew 1.6M+ views on X and led to the upload pipeline being removed, the client being open-sourced, and third-party assessments.  
 → [扒一扒 ZCode 静默上传全量 Git 历史的骚操作](https://blog.ferstar.org/posts/zcode-silent-workspace-snapshot-upload/)
+
+**[SealDesk](https://github.com/runseal-labs/sealdesk)** · Rust  
+A RustDesk fork built on the tailcat transport: scan a QR code and connect, zero config, P2P first with DERP fallback. Early alpha, Linux x64 for now.  
+→ [我用 tailcat 改造了 RustDesk，扫码就能直连](https://blog.ferstar.org/posts/yet-another-remote-desktop-application-sealdesk/)
 
 ## Notes on agent engineering
 
@@ -63,24 +67,25 @@ Found that an AI coding tool with 1M+ users was packing workspaces — including
 
 | Project | What it is |
 | --- | --- |
-| [gestures](https://github.com/ferstar/gestures) · Rust · ⭐111 | The maintained fork of a libinput touchpad gesture tool, rebuilt around fast three-finger dragging on both X11 and Wayland. Now has several times the stars of upstream. [Write-up](https://blog.ferstar.org/en/posts/linux-touchpad-gestures-drag/) |
-| [ideapad-laptop-tb](https://github.com/ferstar/ideapad-laptop-tb) · C · ⭐55 | Out-of-tree kernel module fixing lid-close "dead sleep" and Fn+F5/F6 shutdowns on 2024 ThinkBooks, shipped to users months before the fix reached mainline in 6.15.4. |
-| [xiaomi_xaga_kernel](https://github.com/ferstar/xiaomi_xaga_kernel) · C · ⭐50 | Custom kernel for Redmi K50i / POCO X4 GT / Note 11T Pro, including an MGLRU backport. |
-| [kernel_manifest](https://github.com/ferstar/kernel_manifest) · ⭐36 | Kernel build for Realme GT5 Pro (SM8650), forked 48 times. |
+| [uu-remote-linux](https://github.com/VallierDev/uu-remote-linux/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) · Rust · ⭐673 | Unofficial Linux host for NetEase UU Remote (core contributor). Built the in-process A/V pipeline replacing `ffmpeg` subprocesses: native NVENC (XShm + 4:4:4), zero-copy VAAPI/DMA-BUF (DRI3 & Portal), XDamage delta capture, live encoder hot-swap, and KDE Wayland privacy blanking. |
+| [gestures](https://github.com/ferstar/gestures) · Rust · ⭐111 | Maintained fork of a libinput touchpad gesture tool, rebuilt around low-latency three-finger dragging on both X11 and Wayland. Now has several times the stars of upstream. [Write-up](https://blog.ferstar.org/en/posts/linux-touchpad-gestures-drag/) |
+| [ideapad-laptop-tb](https://github.com/ferstar/ideapad-laptop-tb) · C · ⭐55 · archived | Out-of-tree kernel module fixing lid-close "dead sleep" and Fn+F5/F6 shutdowns on 2024 ThinkBooks, shipped to users months before the fix reached mainline in 6.15.4. |
+| [xiaomi_xaga_kernel](https://github.com/ferstar/xiaomi_xaga_kernel) · C · ⭐53 | Custom kernel for Redmi K50i / POCO X4 GT / Note 11T Pro, including an MGLRU backport. |
+| [kernel_manifest](https://github.com/ferstar/kernel_manifest) · ⭐37 | Kernel build for Realme GT5 Pro (SM8650), forked 48 times. |
 
 ## Tools
 
-- [check-requirements-txt](https://github.com/ferstar/check-requirements-txt) ⭐12 — pre-commit hook that catches packages missing from `requirements.txt` / `pyproject.toml`
-- [pot-app-recognize-plugin-rapid-py](https://github.com/ferstar/pot-app-recognize-plugin-rapid-py) ⭐15 — offline RapidOCR plugin for Pot App
 - [fast-context](https://github.com/ferstar/fast-context) ⭐24 — codebase context locator for coding agents: local chunk prefetch plus remote symbol reasoning
-- [dsh-tool-ocr](https://github.com/ferstar/dsh-tool-ocr) — local OCR so text-only LLMs can read images
+- [dsh-tool-runseal](https://github.com/runseal-labs/dsh-tool-runseal) — RunSeal sandbox provider for DeepSeek Harness (`dsh`), bringing OS-native policy-enforced command execution across Windows, macOS, and Linux
+- [pot-app-recognize-plugin-rapid-py](https://github.com/ferstar/pot-app-recognize-plugin-rapid-py) ⭐15 — offline RapidOCR plugin for Pot App
+- [check-requirements-txt](https://github.com/ferstar/check-requirements-txt) ⭐12 — pre-commit hook that catches packages missing from `requirements.txt` / `pyproject.toml`
 
 ## Upstream contributions
 
-- [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐35k) — Windows 11 session-switch freeze, prompt history, per-arch macOS builds
+- [esengine/DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐36k) — Windows 11 session-switch freeze, prompt history, per-arch macOS builds
 - [BYVoid/OpenCC](https://github.com/BYVoid/OpenCC/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐10k) — manylinux2014 wheels, macOS ARM64 CI
 - [tiann/hapi](https://github.com/tiann/hapi/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐5k) — terminal quick keys, mobile input and teardown fixes
 - [zurawiki/gptcommit](https://github.com/zurawiki/gptcommit/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐2.4k) — custom OpenAI-compatible API base URLs
-- [h2non/filetype.py](https://github.com/h2non/filetype.py/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐775) — zstd and CDFV2 Word detection, file-like reader fixes
+- [h2non/filetype.py](https://github.com/h2non/filetype.py/pulls?q=is%3Apr+author%3Aferstar+is%3Amerged) (⭐776) — zstd and CDFV2 Word detection, file-like reader fixes
 
 <p align="right"><sub><i>Code is cheap, let's talk.</i></sub></p>
